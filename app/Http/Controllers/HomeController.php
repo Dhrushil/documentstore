@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
+use App\User;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +21,17 @@ class HomeController extends Controller
      */
     public function index()
     {
+        
         return view('home');
+    }
+    public function usersGet()
+    {
+        $user = User::all();
+        return response()->json(["user"=> $user]);
+    }
+    public function users(User $id)
+    {
+        
+        return view('profile', ['user' => $id]);
     }
 }

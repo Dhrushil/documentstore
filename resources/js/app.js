@@ -7,7 +7,38 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import VueShowdown from 'vue-showdown'
 import Vuetify from "../plugins/vuetify"
+import { TiptapVuetifyPlugin } from 'tiptap-vuetify'
+import VueHtmlToPaper from 'vue-html-to-paper';
+const options = {
+  name: '_blank',
+  specs: [
+    'fullscreen=yes',
+    'titlebar=yes',
+    'scrollbars=yes'
+  ],
+  styles: [
+    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
+    'https://unpkg.com/kidlat-css/css/kidlat.css'
+  ]
+}
+
+Vue.use(VueHtmlToPaper, options);
+Vue.use(TiptapVuetifyPlugin, {
+  // the next line is important! You need to provide the Vuetify Object to this place.
+  vuetify: Vuetify, // same as "vuetify: vuetify"
+  // optional, default to 'md' (default vuetify icons before v2.0.0)
+  iconsGroup: 'mdi'
+})
+Vue.use(VueShowdown, {
+  // set default flavor of showdown
+  flavor: 'github',
+  // set default options of showdown (will override the flavor options)
+  options: {
+    emoji: false,
+  },
+})
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -22,8 +53,26 @@ import Vuetify from "../plugins/vuetify"
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('input-form', require('./components/InputForm.vue').default);
 Vue.component('show-form', require('./components/ShowForm.vue').default);
+Vue.component('create-form', require('./components/CreateForm.vue').default);
+Vue.component('main-menu', require('./components/MainMenu.vue').default);
+Vue.component('update-form', require('./components/UpdateForm.vue').default);
+Vue.component('landing-page', require('./components/LandingPage.vue').default);
+Vue.component('api-test', require('./components/ApiTest.vue').default);
+Vue.component('nav-bar', require('./components/NavBar.vue').default);
+Vue.component('user-profile', require('./components/UserProfile').default);
 
-/**
+
+
+Vue.prototype.$userName = document.querySelector("meta[name='user-name']").getAttribute('content');
+Vue.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');
+Vue.prototype.$email = document.querySelector("meta[name='email']").getAttribute('content');
+Vue.prototype.$theme = document.querySelector("meta[name='theme']").getAttribute('content');
+
+import 'tiptap-vuetify/dist/main.css'
+import 'vuetify/dist/vuetify.min.css'
+
+
+/**d
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
@@ -31,6 +80,7 @@ Vue.component('show-form', require('./components/ShowForm.vue').default);
 
 const app = new Vue({
     el: '#app',
-    vuetify: Vuetify
+    vuetify: Vuetify,
+    
 });
 

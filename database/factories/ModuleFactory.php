@@ -8,5 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(Module::class, function (Faker $faker) {
     return [
         //
+        'course' => $faker->name,
     ];
 });

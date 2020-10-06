@@ -91,6 +91,19 @@ return [
             'prefix_indexes' => true,
         ],
 
+        'moodle' => [
+            'driver' => 'pgsql',
+            'host' => env('DB_MOODLE_HOST', '127.0.0.1'),
+            'port' => env('DB_MOODLE_PORT', '5432'),
+            'database' => env('DB_MOODLE_DATABASE', 'forge'),
+            'username' => env('DB_MOODLE_USERNAME', 'forge'),
+            'password' => env('DB_MOODLE_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ],
+
     ],
 
     /*

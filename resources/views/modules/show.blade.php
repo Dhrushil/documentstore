@@ -2,39 +2,32 @@
 
 @section('content')
 
-<v-container>
-    <v-card dark>
-
-        <v-card-title class="text-xs-center">{{$module->course}} - {{$module->course_group}}
-
-            <v-spacer></v-spacer>
-            <v-chip>{{$module->named_interim_awards}}</v-chip>&nbsp;
-            <v-chip>{{$module->level_of_highest_award}}</v-chip>&nbsp;
-            <v-chip>{{$module->mode_of_study}}</v-chip>&nbsp;
-            <v-chip>{{\Carbon\Carbon::parse($module->updated_at)->format('d/m/Y')}}</v-chip>
-        </v-card-title>
-        <v-card-subtitle>{{$module->school}}</v-card-subtitle>
-        <v-menu transition="scale-transition">
-            <template v-slot:activator="{ on, attrs }">
-                <v-btn color="primary" style="border-radius: 20px; height: 4.5em; left: -3em; display:block" class="ma-2" v-bind="attrs" v-on="on">
-                    LO
-                </v-btn>
-            </template>
-            <v-card dark>{{$module->learning_outcomes}}
-            </v-card>
-        </v-menu>
-        <v-menu transition="scale-transition">
-            <template v-slot:activator="{ on, attrs }">
-                <v-btn color="primary" style="border-radius: 20px; height: 4.5em; left: -3em; display:block" class="ma-2" v-bind="attrs" v-on="on">
-                    MQS
-                </v-btn>
-            </template>
-            <v-card dark>{{$module->management_of_quality_standards}}
-            </v-card>
-        </v-menu>
-        
-
-    </v-card>
-</v-container>
-
+<show-form 
+    course="{!! ($module->course) !!}"
+    course_group="{{$module->course_group}}"
+    school="{{$module->school}}"
+    subject_community="{{$module->subject_community}}"
+    date_of_initial_validation="{{$module->date_of_initial_validation}}"
+    date_last_amended="{{$module->date_last_amended}}"
+    level_of_highest_award="{{$module->level_of_highest_award}}"
+    named_interim_awards="{{$module->named_interim_awards}}"
+    mode_of_study="{{$module->mode_of_study}}"
+    qaa_subject_benchmark="{{$module->qaa_subject_benchmark}}"
+    recognition_by_psrb="{{$module->recognition_by_psrb}}"
+    other_external_reference="{{$module->other_external_reference}}"
+    
+    learning_teaching_method="{{$module->learning_teaching_method}}"
+    location_of_delivery="{{$module->location_of_delivery}}"
+    admissions_requirements="{{$module->admissions_requirements}}"
+    management_of_quality_standards="{{$module->management_of_quality_standards}}"
+    support_for_students_for_learning="{{$module->support_for_students_for_learning}}"
+    current_course_map="{{$module->current_course_map}}"
+    overall_assessment_approach="{{$module->overall_assessment_approach}}"
+    student_experience_of_assessment="{{$module->student_experience_of_assessment}}"
+    id="{{$module->id}}"
+    learning_outcomes="{{$module->learning_outcomes }}"
+    created_by="{{$module->created_by}}"
+    created_by_id="{{$module->created_by_id}}"
+    created_by_email="{{$module->created_by_email}}"
+/>
 @endsection
