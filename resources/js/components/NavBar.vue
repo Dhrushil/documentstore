@@ -5,7 +5,8 @@
       <v-img src="../images/UoG_White.png" contain></v-img>
     </a>
     <v-spacer></v-spacer>
-
+    <h3>Definitive Document System</h3>
+    <v-spacer></v-spacer>
     <v-menu offset-y transition="slide-y-transition" tile>
       <template v-slot:activator="{ on, attrs }">
         <v-avatar color="orange" v-bind="attrs" v-on="on">
@@ -72,7 +73,7 @@ export default {
         .getAttribute("content"),
       iconName: this.$userName.substring(0, 1),
       navList: [
-        { title: "Home", link: "/u/" + this.$userId, icon: "mdi-home-outline" },
+        { title: "Home", link: "/home", icon: "mdi-home-outline" },
         { title: "Settings", link: "/settings", icon: "mdi-cog-outline" },
         { title: "Cards", link: "/cards", icon: "mdi-cards-outline" },
         { title: "Activity", link: "/activity", icon: "mdi-alert-box-outline" },

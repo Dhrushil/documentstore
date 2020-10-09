@@ -95,6 +95,8 @@
                     <v-img src="../images/UoG_White.png" width="100%" ></v-img>
                 </a>
                 <v-spacer></v-spacer>
+                <h3>Definitive Document System</h3>
+                <v-spacer></v-spacer>
                 <v-btn href="{{ route('login') }}" color="primary" style="text-decoration: none; text-transform: none" tile>Login</v-btn>
                 &nbsp;
                 <v-btn href="{{ route('register') }}" outlined color="white" style="text-decoration: none; text-transform: none" tile text>Register</v-btn>

@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       menuCard: [
-        {title: 'My Modules', subtitle: 'View your modules', colour: '#4285F4', textColour: 'black', theme:'dark', href: '/modules/' + this.$userName, dialog: false},
+        {title: 'My Modules', subtitle: 'View your modules', colour: '#4285F4', textColour: 'black', theme:'dark', href: '/u/' + this.$userId, dialog: false},
         {title: 'All Modules', subtitle: 'View all modules', colour: '#DB4437', textColour: 'white', theme:'dark', href:'modules/all', dialog: false},
         {title: 'Create Modules', subtitle: 'Create your own module', colour: '#0F9D58', textColour: 'black', theme:'dark', href: 'modules/create', dialog: false},
 

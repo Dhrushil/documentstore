@@ -31,6 +31,7 @@
         ></v-text-field>
       </v-card-title>
       <v-data-table
+        
         :headers="headers"
         :items="modules"
         :search="search"
@@ -59,7 +60,7 @@
 
 export default {
   name: "InputForm",
-  props: ["deleted", "created", "updated"],
+  props: ["deleted", "created", "updated", "created_by", "created_by_id", "created_by_email"],
   data() {
     return {
       test: [],

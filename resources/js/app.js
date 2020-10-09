@@ -60,6 +60,7 @@ Vue.component('landing-page', require('./components/LandingPage.vue').default);
 Vue.component('api-test', require('./components/ApiTest.vue').default);
 Vue.component('nav-bar', require('./components/NavBar.vue').default);
 Vue.component('user-profile', require('./components/UserProfile').default);
+Vue.component('settings', require('./components/Settings').default);
 
 
 

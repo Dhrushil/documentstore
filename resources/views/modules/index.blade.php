@@ -9,6 +9,7 @@
 @if (session()->has('updated'))
 <input-form :updated="true"/> 
 @endif
-<input-form/>
+<input-form 
+    />
 @endsection
 

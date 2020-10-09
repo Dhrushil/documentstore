@@ -39,4 +39,5 @@ Route::post('/modules/edit/{id}', 'ModulesController@update');
 Route::get('/modules/edit/{id}', 'ModulesController@edit');
 Route::get('/u/{id}', 'HomeController@users');
 Route::get('/t', 'HomeController@usersGet');
+Route::get('/settings', 'ProfileController@settings');
 

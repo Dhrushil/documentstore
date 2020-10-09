@@ -32,6 +32,6 @@ class HomeController extends Controller
     public function users(User $id)
     {
         
-        return view('profile', ['user' => $id]);
+        return view('navbar.profile', ['user' => $id]);
     }
 }
