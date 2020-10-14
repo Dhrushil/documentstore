@@ -39,6 +39,12 @@ class CreateModulesTable extends Migration
             $table->text('created_by')->nullable();
             $table->text('created_by_email')->nullable();
             $table->text('created_by_id');
+            $table->string('editedpost')->nullable();
+            $table->string('editmadeby')->nullable();
+            $table->string('editmadebyid')->nullable();
+            $table->string('editmadebyemail')->nullable();
+            $table->string('editedchanges')->nullable();
+            $table->string('timeedited')->nullable();
             $table->timestamps();
         });
     }

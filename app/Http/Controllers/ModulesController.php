@@ -81,6 +81,7 @@ class ModulesController extends Controller
         $module->created_by = request('created_by');
         $module->created_by_email = request('created_by_email');
         $module->created_by_id = request('created_by_id');
+
         $module->save();
         return redirect('/modules/all')->with('created', 'post Created');
     }
@@ -138,6 +139,10 @@ class ModulesController extends Controller
         $module->current_course_map = request('current_course_map');
         $module->overall_assessment_approach = request('overall_assessment_approach');
         $module->student_experience_of_assessment = request('student_experience_of_assessment');
+        $module->editedpost = request('editedpost');
+        $module->editmadeby = request('editmadeby');
+        $module->editmadebyid = request('editmadebyid');
+        $module->editmadebyemail = request('editmadebyemail');
         $module->save();
         return redirect('/modules/all')->with('updated', 'post Updated');
     }

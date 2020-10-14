@@ -27,6 +27,7 @@ Route::get('/apiTest', function() {
     
 });
 
+//crud Routes
 Route::get('/modules', 'ModulesController@axiosData')->name('modules');
 Route::get('/modules/all', 'ModulesController@index')->name('modules');
 Route::resource('data', 'ModulesController');
@@ -37,7 +38,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/modules/delete/{id}', 'ModulesController@destroy');
 Route::post('/modules/edit/{id}', 'ModulesController@update');
 Route::get('/modules/edit/{id}', 'ModulesController@edit');
-Route::get('/u/{id}', 'HomeController@users');
-Route::get('/t', 'HomeController@usersGet');
-Route::get('/settings', 'ProfileController@settings');
 
+// systemPages Routes
+Route::get('/u/{id}', 'HomeController@users');
+Route::get('/settings', 'ProfileController@settings');
+Route::get('/admin', 'ProfileController@admin');
+Route::get('/admin/dashboard', 'ProfileController@admindash');
+Route::get('/admin/alerts', 'ProfileController@adminAlert');

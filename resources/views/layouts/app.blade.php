@@ -95,7 +95,7 @@
                     <v-img src="../images/UoG_White.png" width="100%" ></v-img>
                 </a>
                 <v-spacer></v-spacer>
-                <h3>Definitive Document System</h3>
+                <h3>DDS</h3>
                 <v-spacer></v-spacer>
                 <v-btn href="{{ route('login') }}" color="primary" style="text-decoration: none; text-transform: none" tile>Login</v-btn>
                 &nbsp;
@@ -110,20 +110,24 @@
             </nav>
             @endif
             
-            
+            @if (\Request::is('admin') || ('admin.test'))
+            <main class="admin mt-6">
+                @yield('content')
+            </main>
+            @else
             <main class="py-8">
                 @yield('content')
             </main>
+            @endif
         </v-app>
         @if (\Request::is('/'))
         @else
-        <v-card height="10">
-            <v-footer padless dark tile>
+            <v-footer padless dark tile style="z-index: 1">
                 <v-col class="text-center" cols="12">
                     University of Gloucestershire
                 </v-col>
             </v-footer>
-        </v-card>
+   
         @endif
     </div>
 </body>
@@ -132,6 +136,12 @@
 
 <style>
     .py-8 {
+        background-color: #ece8f6;
+        background-image: url("../images/mesh-tile-dark.png");
+        background-repeat: repeat;
+        height: 100%;
+    }
+    .admin {
         background-color: #ece8f6;
         background-image: url("../images/mesh-tile-dark.png");
         background-repeat: repeat;

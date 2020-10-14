@@ -51,16 +51,19 @@ Vue.use(VueShowdown, {
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('input-form', require('./components/InputForm.vue').default);
-Vue.component('show-form', require('./components/ShowForm.vue').default);
-Vue.component('create-form', require('./components/CreateForm.vue').default);
-Vue.component('main-menu', require('./components/MainMenu.vue').default);
-Vue.component('update-form', require('./components/UpdateForm.vue').default);
-Vue.component('landing-page', require('./components/LandingPage.vue').default);
+Vue.component('input-form', require('./components/crud/InputForm.vue').default);
+Vue.component('show-form', require('./components/crud/ShowForm.vue').default);
+Vue.component('create-form', require('./components/crud/CreateForm.vue').default);
+Vue.component('main-menu', require('./components/menu/MainMenu.vue').default);
+Vue.component('update-form', require('./components/crud/UpdateForm.vue').default);
+Vue.component('landing-page', require('./components/menu/LandingPage.vue').default);
 Vue.component('api-test', require('./components/ApiTest.vue').default);
-Vue.component('nav-bar', require('./components/NavBar.vue').default);
-Vue.component('user-profile', require('./components/UserProfile').default);
-Vue.component('settings', require('./components/Settings').default);
+Vue.component('nav-bar', require('./components/menu/NavBar.vue').default);
+Vue.component('user-profile', require('./components/systemPages/UserProfile').default);
+Vue.component('settings', require('./components/systemPages/Settings').default);
+Vue.component('admin', require('./components/systemPages/Admin').default);
+Vue.component('admin-dashboard', require('./components/systemPages/AdminDashboard').default);
+Vue.component('admin-alerts', require('./components/systemPages/AdminAlerts').default);
 
 
 
@@ -79,9 +82,12 @@ import 'vuetify/dist/vuetify.min.css'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
+
 const app = new Vue({
     el: '#app',
     vuetify: Vuetify,
+
     
 });
 
