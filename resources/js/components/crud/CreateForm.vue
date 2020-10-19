@@ -3,13 +3,12 @@
     <v-container>
       <h1>Definitive Documentation Store - Create Form</h1>
       <v-card class="mx-auto" max-width="1600" color="transparent" flat>
-      <v-btn tile href="/modules/all" dark color="#0B72B1" class="lowerBtn">Back</v-btn>
       
       </v-card>
       <form method="post" action="/modules" enctype="multipart/form-data">
         <input type="hidden" name="_token" :value="csrf" />
         <div>
-          <v-btn tile href="/modules/all" dark color="#0B72B1" class="lowerBtn" style="left: em; position: fixed">Back</v-btn>
+          <v-btn tile href="/modules/all" dark color="#0B72B1" class="lowerBtn" style="left: 5.0em; position: fixed">Back</v-btn>
           <v-btn class="submitBtn  white--text" style="float:right; right: 4em; position: fixed;" type="submit" color="#0B72B1" tile >Submit</v-btn>
         <v-card class="mx-auto ma-2 firstCard" max-width="1600">
           <v-card-title>Create Form</v-card-title>

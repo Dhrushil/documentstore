@@ -19,6 +19,10 @@ class ProfileController extends Controller
         return view('systemPages.admindashboard');
     }
 
+    public function adminmodule() {
+        return view('systemPages.adminmodules');
+    }
+
     public function adminAlert() {
         return view('systemPages.adminalert');
     }

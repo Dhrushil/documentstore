@@ -1,7 +1,7 @@
 <template>
   <v-app-bar absolute color="#353637" dark flat >
     &nbsp;
-    <a class="navbar-brand" href="" style="width: 10em">
+    <a class="navbar-brand" href="/home" style="width: 10em">
       <v-img src="../images/UoG_White.png" contain></v-img>
     </a>
     <v-spacer></v-spacer>

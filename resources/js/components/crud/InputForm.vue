@@ -37,14 +37,13 @@
         :search="search"
         single-expand
         show-expand
-        class="mytable"
-        
       >
+
         <template v-slot:top>
           <v-btn style="left:1em; color: white" color="#0B72B1" href="/modules/create" tile>Create<v-icon class="ms-5">mdi-folder-plus-outline</v-icon></v-btn>
         </template>
-        <template v-slot:[`item.id`]="{item}">
-          <v-btn color="#0B72B1" :href="`${item.id}`" style="color: white" tile>Read more<v-icon class="ms-5">mdi-arrow-right</v-icon></v-btn>
+        <template v-slot:[`item.id`]="{item}" >
+          <v-btn color="#0B72B1" :href="`${item.id}`" style="color: white" tile >Read more<v-icon class="ms-5">mdi-arrow-right</v-icon></v-btn>
         </template>
         <template v-slot:expanded-item="{ headers, item }">
           <td :colspan="headers.length">
@@ -96,18 +95,25 @@ export default {
   },
   methods: {
     fetchModules() {
-      axios.get("/modules").then((response) => {
-        this.modules = response.data.modules;
-        this.test = response.data.modules[0];
-        console.log(response)
+      let self = this;
+      axios.get("/datadump/moduledatagetall").then((response) => {
+        self.modules = response.data.modules;
+        console.log(this.modules)
+
       });
     },
+    loopArr() {
+   
+     
+    }
   },
   created() {
     this.fetchModules();
+
   },
+
   mounted() {
-    console.log(this.test.course);
+    this.loopArr()
   },
 };
 </script>

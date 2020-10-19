@@ -2,6 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <link rel="shortcut icon" href="{{ asset('images/table.svg') }}"  type='image/x-icon'>
+    <title>Definitive Document Store</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,8 +13,7 @@
     <meta name="user-id" content="{{optional(Auth::user())->id}}">
     <meta name="email" content="{{optional(Auth::user())->email}}">
     <meta name="theme" content="">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -109,7 +110,7 @@
             </div>
             </nav>
             @endif
-            
+           
             @if (\Request::is('admin') || ('admin.test'))
             <main class="admin mt-6">
                 @yield('content')

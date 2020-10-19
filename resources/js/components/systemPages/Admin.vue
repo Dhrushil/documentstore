@@ -15,13 +15,18 @@
         >
           <v-list-item
             href="/admin/dashboard">
-            <v-list-item-icon><v-icon>mdi-security</v-icon></v-list-item-icon>
+            <v-list-item-icon><v-icon>mdi-view-dashboard</v-icon></v-list-item-icon>
             <v-list-item-title> Dashboard </v-list-item-title>
           </v-list-item>
           <v-list-item
             href="/admin/alerts">
             <v-list-item-icon><v-icon>mdi-alert</v-icon></v-list-item-icon>
             <v-list-item-title> Alerts </v-list-item-title>
+          </v-list-item>
+          <v-list-item
+            href="/admin/modules">
+            <v-list-item-icon><v-icon>mdi-school</v-icon></v-list-item-icon>
+            <v-list-item-title> Modules </v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>

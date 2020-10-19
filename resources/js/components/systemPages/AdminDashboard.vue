@@ -8,14 +8,18 @@
             <v-col v-for="card in cards" :key="card">
               <v-card
                 dark
-                height="200"
                 width="98%"
-                style="display: inline-flex"
                 class="ma-2"
               >
                 <v-card-title>
                   {{ card.name }}
                 </v-card-title>
+        <v-card-text>test </v-card-text>
+        <v-divider></v-divider>
+<v-card-actions>
+  <v-spacer></v-spacer>
+  <v-btn rounded outlined color="success" :href="`${card.url}`">view</v-btn>
+</v-card-actions>
               </v-card>
             </v-col>
           </v-row>
@@ -51,9 +55,9 @@ export default {
         return {
             drawer: true,
             cards: [
-                {name: "card 1"},
-                {name: "card 1"},
-                {name: "card 1"},
+                {name: "View all Modules", url: "/modules/all"},
+                {name: "View my Modules", url: "/modules/all"},
+                {name: "View tickets", url: "/modules/all"},
             ],
             value: [
               1,

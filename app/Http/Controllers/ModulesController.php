@@ -19,6 +19,11 @@ class ModulesController extends Controller
         return response()->json(["modules"=> $modules]);
         
     }
+    public function userData($created_by_id)
+    {
+        $modules = Module::where('created_by_id', '=', $created_by_id)->get();
+        return response()->json(["modules"=> $modules]);
+    }
     public function index()
     {
         //
@@ -34,6 +39,7 @@ class ModulesController extends Controller
         //
         return view ('modules.show', ['module' =>$id]);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -81,7 +87,6 @@ class ModulesController extends Controller
         $module->created_by = request('created_by');
         $module->created_by_email = request('created_by_email');
         $module->created_by_id = request('created_by_id');
-
         $module->save();
         return redirect('/modules/all')->with('created', 'post Created');
     }

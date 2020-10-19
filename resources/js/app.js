@@ -64,6 +64,7 @@ Vue.component('settings', require('./components/systemPages/Settings').default);
 Vue.component('admin', require('./components/systemPages/Admin').default);
 Vue.component('admin-dashboard', require('./components/systemPages/AdminDashboard').default);
 Vue.component('admin-alerts', require('./components/systemPages/AdminAlerts').default);
+Vue.component('admin-modules', require('./components/systemPages/AdminModules').default);
 
 
 
