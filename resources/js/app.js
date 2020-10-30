@@ -30,6 +30,8 @@ Vue.component('landing-page', require('./components/menus/landingPage.vue').defa
 
 // Crud/courses Components
 Vue.component('courses-index', require('./components/crud/courses/index.vue').default);
+Vue.component('courses-create', require('./components/crud/courses/create.vue').default);
+Vue.component('courses-view', require('./components/crud/courses/view.vue').default);
 
 
 

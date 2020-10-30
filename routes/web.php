@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::get('/courses', function () {
     return view('courses.index');
 });
+
+Route::get('/courses/create', function () {
+    return view('courses.create');
+});
+
+Route::get('/courses/view', function () {
+    return view('courses.view');
+});
