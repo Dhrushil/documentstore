@@ -13,3 +13,25 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      courses: []
+    }
+  },
+  methods: {
+    fetchData() {
+      let self = this;
+      axios.get("/courses/BzxHzNoYdXhb5B1").then((response) => {
+        self.courses = response.data.courses;
+        console.log(this.courses)
+      })
+    }
+  },
+  mounted()
+  {
+    this.fetchData()
+  }
+}
+</script>

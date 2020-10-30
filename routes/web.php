@@ -28,3 +28,7 @@ Route::get('/courses/create', function () {
 Route::get('/courses/view', function () {
     return view('courses.view');
 });
+
+
+/** Routes for Course pages */
+Route::get('/courses/BzxHzNoYdXhb5B1', 'App\Http\Controllers\CoursesController@index');
